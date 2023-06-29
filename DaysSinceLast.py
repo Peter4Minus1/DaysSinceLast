@@ -18,7 +18,7 @@ class Timer:
             self.longest = current
 
     def get_dict(self):
-        return {"name":self.name, "date":datetime.strptime(self.date, format), "current":timedelta_strf(self.current), "longest":timedelta_strf(self.longest)}
+        return {"name":self.name, "date":self.date.strftime(format), "current":timedelta_strf(self.current), "longest":timedelta_strf(self.longest)}
 
 def timedelta_strp(string):
     array = string.split(":")
