@@ -114,12 +114,11 @@ while True:
         print("Select a timer to reset:")
         display_choices(timers)
         u_i = input()
-        try:
-            selected = timers[int(u_i)-1]
-            selected.date = datetime.strptime(set_date(), format)
-            save(timers)
-        except:
-            pass
+
+        selected = timers[int(u_i)-1]
+        selected.date = datetime.strptime(set_date(), "%m/%d/%Y%I:%M %p") 
+        timers[int(u_i)-1] = selected
+        save(timers)
 
     elif selected == "Create a new progress tracker":
 
